@@ -45,11 +45,12 @@ So, when you're ready to run, just do: `sudo systemctl daemon-reload`</br>
 To start it : `sudo systemctl start jenkins.service`</br>
 
 
-It's going to install everything and you'll have Jenkins on your browser : `localhost:8080` or use a different port ::
-You'll also get a password, so keep it safe. Copy it somewhere and save it. Once the installation is over and you hop over to localhost:8080 , you're going to find a page that says 'unlock jenkins'. Yeah, copy and paste the password you just saved.
-"But what if I forgot my password?" - (-_-) , go to `yourpath/.jenkins/secrets/initialAdminPassword` to get it. 
+It's going to install everything and you'll have Jenkins on your browser : `localhost:8080` or use a different port ::</br>
+You'll also get a password, so keep it safe. Copy it somewhere and save it. </br>
+Once the installation is over and you hop over to localhost:8080 , you're going to find a page that says 'unlock jenkins'. Yeah, copy and paste the password you just saved.</br>
+"But what if I forgot my password?" - (-_-) , go to `yourpath/.jenkins/secrets/initialAdminPassword` to get it. </br>
 You enter the password, and you get into the intro screen. Go ahead and select the plug-ins you want. I used suggested plug-ins. Create username and all that jazz. Everything works out, you should see your Jenkins dashboard.
-Jenkins is going to be a hidden folder.
+Jenkins is going to be a hidden folder.</br>
 </br>
 For MAC users, if you can't see your `.Jenkins` folder, do this : `defaults write com.apple.finder AppleShowAllFiles TRUE` 
 </br>
@@ -96,12 +97,12 @@ If you go and look at the build console, you'll see where and how stuff happened
 ## Nodes 
 Go to manage Jenkins>Manage Nodes </br>
 Click on `New Node` and enter name and activate the radiobutton on 'Dumb Slave'.</br>
-Now, if you want more build processes taking place, increase the number of executors. </br>
+Now, if you want more build processes taking place, increase the number of executors. </br></br>
 Remote Root Directory is where all your config files are stored. In our master, we have everything stored in `~/opt/jenkins` and similarly we need to store those files in our Node as well. </br>
-Set your Remote Root Directory to `/var/jenkins`. Make sure you've defined it : `mkdir /var/jenkins` </br>
+Set your Remote Root Directory to `/var/jenkins`. Make sure you've defined it : `mkdir /var/jenkins` </br></br>
 Your `Launch Method` can be SSH (in which case you'd need to add SSH keys) along with a Host address.</br> Choose your own flavour of availibility. </br>
-In Node Properties, you've got tool locations. If you're serving Java pages, you need to use your Java JDK
-Once you save, everything fires up. Now you can go back to jobs, fire up a new job. In the job config page, you have an option called `Restrict where this project can be run`.</br>
+In Node Properties, you've got tool locations. If you're serving Java pages, you need to use your Java JDK</br>
+Once you save, everything fires up. Now you can go back to jobs, fire up a new job. In the job config page, you have an option called `Restrict where this project can be run`.</br></br>
 When you click that, you get an option to select the Node name that you want to run it on. Breeze through your config and Build your job. You got your build going and concluded on a remote location.
 
 
