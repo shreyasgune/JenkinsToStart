@@ -1,16 +1,16 @@
-#Jenkins : Continous Integration
+# Jenkins : Continous Integration
 This is like a hot keyword right now, and it may get a bit dodgy understand how it all works under the hood. I'm going to try and simplify things as best as I can. Lets get into it.</br>
 
 So, Jenkins is a java application, and it is platform independent. It's used for continous integration/continous delivery. </br>
 
-##Continous Integration + Continous Deployment
+## Continous Integration + Continous Deployment
 So, you got a bunch of devs, typing away on their local machine, they may be working on a local copy of the `dev` branch and comitting their code up using `Git` or `TFS` or whatever. It's the end of the day, everyone has committed their code and its time to
 make the build.</br>Now, if the build fails because some buggy code, you're going to have to go back, look through all the commits for the day to find out what broke your build. It's going to be a hassle. Truest me. I may be young be I've seen it happen and it ain't pretty.
 
 What Jenkins does is, as soon as a developer has comitted code in the shared repository, Jenkins takes that code and triggers a build.</br>So we are talking building exe, websites, apps etc. So, we find out immediately which commit broke our code and fix it. 
 In the case our builds are successful, we can run tests (Gradle, JSHint, Nunit etc) as post build tests.</br>These tests will run automated and we shall get a report back. How neat is that. Once everything checks out, its deployed. Continously. Hence , continuous deployment.
 
-##Downloading Jenkins
+## Downloading Jenkins
 Click on [Download Jenkins](https://jenkins.io/) and you can go ahead and get the `war` file for your OS.</br> 
 Place that war in a location, then open up a `cmd` or `terminal` in the associated folder.</br>
 
