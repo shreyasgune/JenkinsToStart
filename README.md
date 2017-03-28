@@ -41,8 +41,12 @@ Restart=on-abort
 WantedBy=multi-user.target
 ```
 </br>
-So, when you're ready to run, just do: `sudo systemctl daemon-reload` </br>
-To start it : `sudo systemctl start jenkins.service`</br>
+So, when you're ready to run, just do: 
+`sudo systemctl daemon-reload` 
+</br>
+To start it : 
+`sudo systemctl start jenkins.service`
+</br>
 
 
 It's going to install everything and you'll have Jenkins on your browser : `localhost:8080` or use a different port ::</br>
