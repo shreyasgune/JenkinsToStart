@@ -42,10 +42,12 @@ WantedBy=multi-user.target
 ```
 </br>
 So, when you're ready to run, just do: 
-`sudo systemctl daemon-reload` 
+```sudo systemctl daemon-reload
+```
 </br>
 To start it : 
-`sudo systemctl start jenkins.service`
+```sudo systemctl start jenkins.service
+```
 </br>
 
 
