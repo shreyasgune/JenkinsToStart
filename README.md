@@ -5,10 +5,10 @@ So, Jenkins is a java application, and it is platform independent. It's used for
 
 ## Continous Integration + Continous Deployment
 So, you got a bunch of devs, typing away on their local machine, they may be working on a local copy of the `dev` branch and comitting their code up using `Git` or `TFS` or whatever. It's the end of the day, everyone has committed their code and its time to
-make the build.</br>Now, if the build fails because some buggy code, you're going to have to go back, look through all the commits for the day to find out what broke your build. It's going to be a hassle. Truest me. I may be young be I've seen it happen and it ain't pretty.
+make the build.</br>Now, if the build fails because some buggy code, you're going to have to go back, look through all the commits for the day to find out what broke your build. It's going to be a hassle. Trust me. I may be young but I've seen it happen and it ain't pretty.
 
 What Jenkins does is, as soon as a developer has comitted code in the shared repository, Jenkins takes that code and triggers a build.</br>So we are talking building exe, websites, apps etc. So, we find out immediately which commit broke our code and fix it. 
-In the case our builds are successful, we can run tests (Gradle, JSHint, Nunit etc) as post build tests.</br>These tests will run automated and we shall get a report back. How neat is that. Once everything checks out, its deployed. Continously. Hence , continuous deployment.
+</br>In the case our builds are successful, we can run tests (Gradle, JSHint, Nunit etc) as post build tests.</br>These tests will run automated and we shall get a report back. How neat is that. Once everything checks out, its deployed. Continously. Hence , continuous deployment.
 
 ## Downloading Jenkins
 Click on [Download Jenkins](https://jenkins.io/) and you can go ahead and get the `war` file for your OS.</br> 
@@ -64,11 +64,12 @@ One thing to note is that once you install Jenkins, you're going to have a direc
 Now, your Jenkins can exist on your server (Tomcat or any other falvour) but it can also exist as a standalone. If you are concerned about port-conflicts, do this :  `java -jar jenkins.war --httpPort=<port_num>`
 </br>
 You can deploy any project (C++, Java, Python) using jenkins. Just make a `RPM` out of your project.
-##Security
+
+## Security
 Before you go do anything(create new jobs) with Jenkins, go ahead into the `Manage Jenkins` tab, and then select `Configure Global Security`, then click on the 'enable security' checkbox. You're going to find many options. Select the ones that work best for you.
 For those who chose Security Realm = Jenkins own user database (Allow users to sign up) & Authorization = Logged-in users can do anything , make sure to create a user and log-in .
 
-##Connect with GIT and deploy
+## Connect with GIT and deploy
 First you need to have the GIT plugin installed. Go ahead and do that. </br>
 Then, create a job (freestyle project) and add a description that suits you. Now, you should be having a GIT repo you want to associate with Jenkins : `https://github.com/username/repo.git`. Make sure to selecte (discard Old builds) so that you don't keep encroaching your disk space.
 Specify the number of days to keep the builds, and specify the number of builds you want to keep.</br>
